@@ -1,0 +1,7 @@
+// Author: Tyler
+@mixin animation-duration($speed) {
+  -webkit-animation-duration: $speed;
+  -moz-animation-duration: $speed;
+  -o-animation-duration: $speed;
+  animation-duration: $speed;
+}

@@ -1,0 +1,6 @@
+// Author: Moe
+@import "_variables";
+
+@mixin background($src, $x:0, $y:0, $repeat:no-repeat, $attachment:scroll) {
+  background: url("/v2_images/" + $src + "?v=" + $VERSION) $repeat $attachment $x $y transparent;
+}

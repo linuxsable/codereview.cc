@@ -1,0 +1,9 @@
+// Author: Tyler
+@mixin background-vertical-gradient($start, $end) {
+  background: $start;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start), to($end));
+  background: -webkit-linear-gradient(top, $start, $end);
+  background: -moz-linear-gradient(top, $start, $end);
+  background: -ms-linear-gradient(top, $start, $end);
+  background: -o-linear-gradient(top, $start, $end);
+}

@@ -1,0 +1,12 @@
+// Author: Moe
+@import "_background";
+
+@mixin sprite($x:0, $y:0, $repeat:no-repeat, $attachment:scroll) {
+  @include background("sprite.png", $x, $y, $repeat, $attachment);
+}
+
+@mixin mobile-sprite($x:0, $y:0, $repeat:no-repeat, $attachment:scroll) {
+  @include background("mobile-sprite@2x.png", $x, $y, $repeat, $attachment);
+  /* Change this to half the dimensions of the retina sprite */
+  background-size: 183px 29px;
+}

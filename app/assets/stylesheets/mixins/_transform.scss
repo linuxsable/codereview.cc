@@ -1,0 +1,8 @@
+// Author: Moe
+@mixin transform($type:"") {
+  -moz-transform: #{$type};
+  -webkit-transform: #{$type};
+  -o-transform: #{$type};
+  -ms-transform: #{$type};
+  transform: #{$type};
+}

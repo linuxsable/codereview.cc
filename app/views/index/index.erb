@@ -1,1 +1,38 @@
-index
+<div class="submitter-header">
+    <div class="avatar">
+        <img src="https://si0.twimg.com/profile_images/3384244865/c806b06aee4f4ac6e712788f935241fc.png" />
+    </div>
+    <div class="username">Ian Silber</div>
+    <div class="meta">
+        <div class="time">Submitted 2 days ago</div>
+    </div>
+    <div class="clearer"></div>
+</div>
+<div class="code">
+    <div class="gutter"></div>
+    <div class="content">
+        <pre class="prettyprint linenums">// Setup the resize event
+// TODO: Debounce this without underscore.js
+$(window).on('resize', function() {
+    this.resizeTimeout && clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(function() {
+        this._resize();
+    }.bind(this), 250);
+}.bind(this));
+
+// If this class is present it means
+// the plugin has been initalized already
+this.$el.addClass('laced');
+
+$(window).on('resize', function() {
+    this.resizeTimeout && clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(function() {
+        this._resize();
+    }.bind(this), 250);
+}.bind(this));
+
+// If this class is present it means
+// the plugin has been initalized already
+this.$el.addClass('laced');</pre>
+    </div>
+</div>

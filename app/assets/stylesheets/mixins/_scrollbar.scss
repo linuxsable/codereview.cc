@@ -1,0 +1,17 @@
+// Author: Tyler
+@mixin scrollbar($track-color:#f5f5f5, $thumb-color:#aaa) {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    // @include border-radius(20px);
+    background: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    // @include border-radius(20px);
+    background: $thumb-color;
+  }
+}

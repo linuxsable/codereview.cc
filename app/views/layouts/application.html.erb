@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ReviewMyCode</title>
+  <title>Review My Code</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://google-code-prettify.googlecode.com/svn/loader/prettify.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,400|Inconsolata|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://jmblog.github.io/color-themes-for-google-code-prettify/css/themes/tomorrow.css">
 </head>
 <body>
+
+<header class="main">
+    <div class="logo">Review My Code</div>
+</header>
 
 <%= yield %>
 

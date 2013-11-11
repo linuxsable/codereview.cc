@@ -1,0 +1,7 @@
+// Author: Tyler
+@mixin animation($options...) {
+  -moz-animation: $options;
+  -webkit-animation: $options;
+  -o-animation: $options;
+  animation: $options;
+}

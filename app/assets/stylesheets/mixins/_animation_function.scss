@@ -1,0 +1,7 @@
+// Author: Moe
+@mixin animation-function($speed) {
+  -webkit-animation-timing-function: $speed;
+  -moz-animation-timing-function: $speed;
+  -o-animation-timing-function: $speed;
+  animation-timing-function: $speed;
+}

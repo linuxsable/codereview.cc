@@ -1,0 +1,6 @@
+// Author: Tyler
+@mixin border-radius-top-right($size) {
+  -webkit-border-top-right-radius: $size;
+  -moz-border-top-right-radius: $size;
+  border-top-right-radius: $size;
+}

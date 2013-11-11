@@ -1,0 +1,8 @@
+// Author: Tyler
+@mixin backface-visibility {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  // This mozilla tag is creating bad side-effects,
+  // leaving it out for now
+  // -moz-backface-visibility: hidden;
+}

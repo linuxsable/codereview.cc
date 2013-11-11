@@ -1,0 +1,16 @@
+// Author: Tyler
+@mixin no-user-select($ignore-firefox:false) {
+  @if $ignore-firefox == true {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-touch-callout: none;
+  } @else {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+}

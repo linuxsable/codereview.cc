@@ -1,0 +1,8 @@
+// Author: Tyler
+@mixin transition($type, $duration:"", $option:"", $delay:"0s") {
+  -moz-transition: $type #{$duration} #{$option} #{$delay};
+  -webkit-transition: $type #{$duration} #{$option} #{$delay};
+  -o-transition: $type #{$duration} #{$option} #{$delay};
+  -ms-transition: $type #{$duration} #{$option} #{$delay};
+  transition: $type #{$duration} #{$option} #{$delay};
+}

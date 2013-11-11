@@ -1,0 +1,8 @@
+// Author: Moe
+@mixin break-word {
+  -moz-word-wrap: break-word;
+  -webkit-word-wrap: break-word;
+  -ms-word-wrap: break-word;
+  -o-word-wrap: break-word;
+  word-wrap: break-word
+}
