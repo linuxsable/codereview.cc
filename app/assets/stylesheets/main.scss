@@ -1,4 +1,6 @@
 @import 'mixins/border_radius';
+@import 'mixins/box_shadow';
+@import 'mixins/transition';
 
 html, body {
   font-family: Lato;
@@ -29,18 +31,23 @@ header.main {
 }
 
 .submitter-header {
-  padding: 15px;
+  padding: 10px 15px;
   border-bottom: 2px solid #eee;
   position: relative;
   margin-top: 50px;
 
   .avatar {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     float: left;
     background: #eee;
     overflow: hidden;
     @include border-radius(100px);
+    @include transition(500ms linear);
+
+    &:hover {
+      @include box-shadow(0px 0px 12px #09C);
+    }
 
     img {
       width: 45px;
@@ -51,14 +58,14 @@ header.main {
   .username {
     float: left;
     padding-left: 10px;
-    padding-top: 15px;
+    padding-top: 12px;
     font-size: 16px;
   }
 
   .meta {
     position: absolute;
     right: 15px;
-    top: 32px;
+    top: 26px;
     font-size: 12px;
     color: #888;
 

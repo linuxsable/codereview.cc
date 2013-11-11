@@ -10,7 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
 //= require jquery-2.0.3
 //= require underscore
 //= require backbone
+//= require app.js
+//= require views/review.js
