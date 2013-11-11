@@ -11,3 +11,6 @@
 // about supported directives.
 //
 //= require_tree .
+//= require jquery-2.0.3
+//= require underscore
+//= require backbone
