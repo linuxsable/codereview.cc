@@ -8,15 +8,15 @@
         Models: {},
         Collections: {},
 
-        currentUser: null,
-
         helpers: {
             
         },
 
         start: function(options) {
             options = options || {};
-            
+
+            var router = new App.Routers.Main;
+
             Backbone.history.start({ pushState: true });
 
             // All navigation that is relative should be passed through the navigate

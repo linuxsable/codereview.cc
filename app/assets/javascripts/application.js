@@ -12,6 +12,11 @@
 //
 //= require jquery-2.0.3
 //= require underscore
+//= require mustache
 //= require backbone
 //= require app.js
+//= require routers/main.js
 //= require views/review.js
+//= require views/review_code.js
+//= require views/review_comments.js
+//= require views/review_header.js

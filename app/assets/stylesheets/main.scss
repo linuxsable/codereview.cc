@@ -30,7 +30,7 @@ header.main {
   }
 }
 
-.submitter-header {
+.review-header {
   padding: 10px 15px;
   border-bottom: 2px solid #eee;
   position: relative;
@@ -78,14 +78,6 @@ header.main {
 .code {
   width: 50%;
   margin: 20px 70px;
-  // border: 1px solid #ddd;
-  @include border-radius(5px);
-
-  .gutter {
-    float: left;
-    width: 100px;
-    background: #ddd;
-  }
 
   .content {
     header {
@@ -106,10 +98,22 @@ header.main {
       padding: 20px;
       font-size: 15px;
       line-height: 1.2em;
+      cursor: default;
 
       ol li {
         list-style: decimal;
         background: #fff;
+        color: #555;
+
+        span {
+          @include transition(all 50ms linear);  
+        }
+
+        .comment {
+          width: 100%;
+          height: 50px;
+          border: 1px solid #eee;
+        }
       }
     }
   }

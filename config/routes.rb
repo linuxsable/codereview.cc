@@ -53,4 +53,6 @@ ReviewMyCode::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get 'r/:id' => 'review#index'
 end
