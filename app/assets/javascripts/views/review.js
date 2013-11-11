@@ -11,9 +11,17 @@ App.Views.Review = Backbone.View.extend({
     subViews: {},
 
     initialize: function() {
-        this.subViews.reviewHeader = new App.Views.ReviewHeader;
-        this.subViews.reviewCode = new App.Views.ReviewCode;
-        this.subViews.reviewComments = new App.Views.ReviewComments;
+        this.subViews.reviewHeader = new App.Views.ReviewHeader({
+            model: this.model
+        });
+
+        this.subViews.reviewCode = new App.Views.ReviewCode({
+            model: this.model
+        });
+
+        this.subViews.reviewComments = new App.Views.ReviewComments({
+            model: this.model
+        });
 
         this.render();
     },
