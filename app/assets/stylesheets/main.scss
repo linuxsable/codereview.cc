@@ -1,6 +1,7 @@
 @import 'mixins/border_radius';
 @import 'mixins/box_shadow';
 @import 'mixins/transition';
+@import 'mixins/no_user_select';
 
 * {
   box-sizing: border-box;
@@ -32,6 +33,7 @@ header.main {
     font-size: 20px;
     color: #333;
     text-align: center;
+    @include no-user-select;
   }
 
   .right {
@@ -65,107 +67,138 @@ footer.main {
   }
 }
 
-.review-header {
-  padding: 10px 15px;
-  border-bottom: 2px solid #eee;
+.main-content {
   position: relative;
-  margin-top: 50px;
+  top: 51px;
+}
 
-  .avatar {
-    width: 40px;
-    height: 40px;
-    float: left;
-    background: #eee;
-    overflow: hidden;
-    @include border-radius(100px);
-    @include transition(500ms linear);
+.new-review {
+  margin: 15px;
 
-    &:hover {
-      @include box-shadow(0px 0px 12px #09C);
-    }
-
-    img {
-      width: 45px;
-      height: 45px;
-    }
+  textarea, input, select {
+    display: block;
+    border: 1px solid #eee;
+    resize: none;
+    width: 500px;
+    padding: 5px;
+    margin-top: 10px;
   }
 
-  .username {
-    float: left;
-    padding-left: 10px;
-    padding-top: 12px;
-    font-size: 16px;
+  textarea {
+    min-height: 300px;
   }
 
-  .meta {
-    position: absolute;
-    right: 15px;
-    top: 26px;
-    font-size: 12px;
-    color: #888;
-
-    .time {
-      font-style: italic;
-    }
+  .submit {
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: underline;
+    margin-top: 10px;
+    cursor: pointer;
   }
 }
 
-.code {
-  width: 50%;
-  margin: 20px 70px;
+.review {
+  .review-header {
+    padding: 10px 15px;
+    border-bottom: 1px dashed #eee;
+    position: relative;
 
-  .content {
-    header {
-      .filename {
-        font-size: 14px;
-        color: #555;
+    .avatar {
+      width: 40px;
+      height: 40px;
+      float: left;
+      background: #eee;
+      overflow: hidden;
+      @include border-radius(100px);
+      @include transition(500ms linear);
 
-        .type {
-          color: #999;
-        }
+      &:hover {
+        @include box-shadow(0px 0px 12px #09C);
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
       }
     }
 
-    pre.prettyprint {
-      border: none;
-      padding: 0;
-      font-family: Inconsolata;
-      padding: 20px;
-      font-size: 15px;
-      line-height: 1.2em;
-      cursor: default;
+    .username {
+      float: left;
+      padding-left: 10px;
+      padding-top: 12px;
+      font-size: 16px;
+    }
 
-      ol li {
-        list-style: decimal;
-        background: #fff;
-        color: #777;
+    .meta {
+      position: absolute;
+      right: 15px;
+      top: 26px;
+      font-size: 12px;
+      color: #888;
 
-        span {
-          @include transition(all 50ms linear);  
+      .time {
+        font-style: italic;
+      }
+    }
+  }
+
+  .code {
+    width: 50%;
+    margin: 20px 70px;
+
+    .content {
+      header {
+        .filename {
+          font-size: 14px;
+          color: #555;
+
+          .type {
+            color: #999;
+          }
         }
+      }
 
-        .comment {
-          width: 100%;
-          height: 50px;
-          border: 1px solid #eee;
+      pre.prettyprint {
+        border: none;
+        padding: 0;
+        font-family: Inconsolata;
+        padding: 20px;
+        font-size: 15px;
+        line-height: 1.1em;
+        cursor: default;
+
+        ol li {
+          list-style: decimal;
+          background: #fff;
+          color: #777;
+
+          span {
+            @include transition(all 50ms linear);  
+          }
+
+          .comment {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #eee;
+          }
         }
       }
     }
   }
-}
 
-.comments {
-  margin-left: 50px;
+  .comments {
+    margin-left: 50px;
 
-  .new {
-    textarea {
-      width: 500px;
-      height: 50px;
-      border: 1px solid #eee;
-      resize: none;
-      margin-top: 10px;
-      padding: 5px;
-      @include border-radius(5px);
+    .new {
+      textarea {
+        width: 500px;
+        height: 50px;
+        border: 1px solid #eee;
+        resize: none;
+        margin-top: 10px;
+        padding: 5px;
+        @include border-radius(5px);
+      }
     }
   }
 }

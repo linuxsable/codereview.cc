@@ -18,6 +18,12 @@ App.Views.ReviewCode = Backbone.View.extend({
                 if (model.get('type') == 1) {
                     return 'Ruby';
                 }
+                else if (model.get('type') == 2) {
+                    return 'Javascript';
+                }
+                else {
+                    return 'Unknown Lang';
+                }
             }
         })));
 

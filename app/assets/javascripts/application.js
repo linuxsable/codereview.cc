@@ -17,6 +17,7 @@
 //= require app.js
 //= require routers/main.js
 //= require views/main_header.js
+//= require views/new_review.js
 //= require views/review.js
 //= require views/review_code.js
 //= require views/review_comments.js

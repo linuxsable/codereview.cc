@@ -44,6 +44,7 @@ App.Views.MainHeader = Backbone.View.extend({
                         currentUser.set('fbLastName', resp.last_name);
                         currentUser.set('fbUsername', resp.username);
                         currentUser.set('fbBio', resp.bio);
+                        currentUser.set('fbId', parseInt(resp.id));
                         currentUser.save(null, {
                             success: function() {
                                 _this.render();

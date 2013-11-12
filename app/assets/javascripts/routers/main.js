@@ -1,7 +1,8 @@
 App.Routers.Main = Backbone.Router.extend({
     routes: {
         '': 'index',
-        'r/:id': 'review'
+        'r/:id': 'review',
+        'review/new': 'newReview'
     },
 
     initialize: function(options) {
@@ -31,5 +32,10 @@ App.Routers.Main = Backbone.Router.extend({
                 console.log(arguments);
             }
         });
+    },
+
+    newReview: function() {
+        var view = new App.Views.NewReview;
+        $('.main-content').html(view.render().el);
     }
 });

@@ -14,13 +14,15 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="main-content">
+    <%= yield %>
+</div>
 
-<footer class="main">
+<!-- <footer class="main">
     <div class="left">
         <div class="created-by">Created by <a href="#">@_ty</a>.</div>
     </div>
-</footer>
+</footer> -->
 
 <div id="fb-root"></div>
 <script>
@@ -63,11 +65,11 @@
 
 <script id="tpl-review-header" type="text/template">
     <div class="avatar">
-          <img src="https://si0.twimg.com/profile_images/3384244865/c806b06aee4f4ac6e712788f935241fc.png" />
+          <img src="{{avatarUrl}}" />
       </div>
-      <div class="username">Ian Silber</div>
+      <div class="username">{{name}}</div>
       <div class="meta">
-          <div class="time">Submitted 2 days ago</div>
+          <div class="time">{{timestamp}}</div>
       </div>
       <div class="clearer"></div>
 </script>
@@ -98,6 +100,17 @@
             <div class="login">Login</div>
         {{/loggedIn}}
     </div>
+</script>
+
+<script id="tpl-new-review" type="text/template">
+    <h1>New Reivew</h1>
+    <input type="text" name="filename" placeholder="Filename" />
+    <select name="type">
+        <option value="1">Ruby</option>
+        <option value="2">Javascript</option>
+    </select>
+    <textarea placeholder="Code..."></textarea>
+    <div class="submit">Post!</div>
 </script>
 
 </body>

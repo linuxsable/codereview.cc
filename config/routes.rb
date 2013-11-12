@@ -55,4 +55,5 @@ ReviewMyCode::Application.routes.draw do
   #   end
 
   get 'r/:id' => 'review#index'
+  get 'review/new' => 'review#new'
 end
