@@ -18,7 +18,7 @@ App.Views.NewReview = Backbone.View.extend({
 
     submit: function() {
         if (!Parse.User.current()) {
-            alert('Must be logged in to post');
+            return alert('Must be logged in to post');
         }
 
         var Review = Parse.Object.extend('Review');
