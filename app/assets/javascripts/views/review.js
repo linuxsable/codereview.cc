@@ -8,9 +8,12 @@ App.Views.Review = Backbone.View.extend({
         'click .code .content pre ol li': 'clickLine',
     },
 
+    comments: [],
     subViews: {},
 
-    initialize: function() {
+    initialize: function(options) {
+        this.comments = options.comments || [];
+
         this.subViews.reviewHeader = new App.Views.ReviewHeader({
             model: this.model
         });
@@ -20,7 +23,8 @@ App.Views.Review = Backbone.View.extend({
         });
 
         this.subViews.reviewComments = new App.Views.ReviewComments({
-            model: this.model
+            model: this.model,
+            comments: this.comments
         });
 
         this.render();

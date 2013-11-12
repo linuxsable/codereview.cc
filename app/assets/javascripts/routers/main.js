@@ -18,13 +18,24 @@ App.Routers.Main = Backbone.Router.extend({
 
     review: function(id) {
         var review = Parse.Object.extend('Review');
-        var query = new Parse.Query(review);
+        var reviewQuery = new Parse.Query(review);
+        reviewQuery.include('parent');
 
-        query.get(id, {
+        var comment = Parse.Object.extend('Comment');
+        var commentQuery = new Parse.Query(comment);
+
+        reviewQuery.get(id, {
             success: function(review) {
-                var view = new App.Views.Review({
-                    el: $('.review'),
-                    model: review
+                commentQuery.equalTo('review', review);
+                commentQuery.include('user');
+                commentQuery.find({
+                    success: function(result) {
+                        var view = new App.Views.Review({
+                            el: $('.review'),
+                            model: review,
+                            comments: result
+                        });
+                    }
                 });
             },
 

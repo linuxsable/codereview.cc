@@ -85,9 +85,25 @@
 
 <script id="tpl-review-comments" type="text/template">
     <h1>Comments</h1>
-    <div class="new">
-        <textarea placeholder="Write a comment..."></textarea>
+    <div class="list">
+        {{{comments}}}
     </div>
+    <div class="new">
+        <h1>New</h1>
+        <textarea placeholder="Write a comment..."></textarea>
+        <div class="submit">Post</div>
+    </div>
+</script>
+
+<script id="tpl-review-comment" type="text/template">
+    <div class="avatar">
+        <img src="{{avatarUrl}}" />
+    </div>
+    <div class="content">
+        <div class="username">{{username}} says:</div>
+        {{content}}
+    </div>
+    <div class="clearer"></div>
 </script>
 
 <script id="tpl-main-header" type="text/template">

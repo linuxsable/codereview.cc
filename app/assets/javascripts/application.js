@@ -21,4 +21,5 @@
 //= require views/review.js
 //= require views/review_code.js
 //= require views/review_comments.js
+//= require views/review_comment.js
 //= require views/review_header.js

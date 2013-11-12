@@ -8,12 +8,6 @@ App.Views.ReviewHeader = Backbone.View.extend({
 
     initialize: function() {
         this.template = $('#tpl-review-header').html();
-
-        this.model.get('parent').fetch({
-            success: function() {
-                this.render();
-            }.bind(this)
-        });
     },
 
     render: function() {
