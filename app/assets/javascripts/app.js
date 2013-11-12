@@ -15,6 +15,8 @@
         start: function(options) {
             options = options || {};
 
+            Parse.initialize("Gm97bunEwR2nDQWO0SULDGNwxtPLZsorqYrR7UjR", "1MqGClUuY7U5B87d6D4US6sTBBLgtDrMFqhTnPbk");
+
             var router = new App.Routers.Main;
 
             Backbone.history.start({ pushState: true });

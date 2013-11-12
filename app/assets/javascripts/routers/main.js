@@ -7,7 +7,8 @@ App.Routers.Main = Backbone.Router.extend({
     initialize: function(options) {
         options = options || {};
 
-        Parse.initialize("Gm97bunEwR2nDQWO0SULDGNwxtPLZsorqYrR7UjR", "1MqGClUuY7U5B87d6D4US6sTBBLgtDrMFqhTnPbk");
+        var header = new App.Views.MainHeader;
+        $('body').prepend(header.render().el);
     },
 
     index: function() {
