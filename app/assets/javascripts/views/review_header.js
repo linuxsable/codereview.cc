@@ -32,7 +32,7 @@ App.Views.ReviewHeader = Backbone.View.extend({
                 var user = this.model.get('parent');
                 if (!user._hasData) return;
                 return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';
-            }
+            }.bind(this)
         }));
 
         return this;
