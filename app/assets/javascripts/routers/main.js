@@ -28,6 +28,8 @@ App.Routers.Main = Backbone.Router.extend({
             success: function(review) {
                 commentQuery.equalTo('review', review);
                 commentQuery.include('user');
+                commentQuery.ascending('createdAt');
+
                 commentQuery.find({
                     success: function(result) {
                         var view = new App.Views.Review({

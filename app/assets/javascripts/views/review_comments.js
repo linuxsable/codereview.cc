@@ -51,6 +51,7 @@ App.Views.ReviewComments = Backbone.View.extend({
 
                 commentQuery.equalTo('review', this.model);
                 commentQuery.include('user');
+                commentQuery.ascending('createdAt');
 
                 commentQuery.find({
                     success: function(_comments) {
