@@ -29,7 +29,8 @@ App.Views.ReviewHeader = Backbone.View.extend({
             }.bind(this),
 
             avatarUrl: function() {
-                var user = Parse.User.current();
+                var user = this.model.get('parent');
+                if (!user._hasData) return;
                 return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';
             }
         }));
