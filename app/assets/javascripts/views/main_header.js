@@ -26,6 +26,14 @@ App.Views.MainHeader = Backbone.View.extend({
             profileUrl: function() {
                 var user = Parse.User.current();
                 return 'http://facebook.com/' + user.get('fbUsername');
+            },
+
+            showBackButton: function() {
+                return window.location.pathname != '/';
+            },
+
+            backButtonUrl: function() {
+                return '/';
             }
         }));
 

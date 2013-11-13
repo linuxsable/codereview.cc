@@ -12,7 +12,7 @@ App.Views.ReviewInlineComment = Backbone.View.extend({
 
     render: function() {
         this.$el.html(Mustache.render(this.template, {
-            
+            content: 'test'
         }));
 
         return this;

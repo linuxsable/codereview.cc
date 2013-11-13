@@ -88,10 +88,13 @@
     <div class="list">
         {{{comments}}}
     </div>
+    {{#showNoComments}}
+        <div class="no-comments">No comments yet.</div>
+    {{/showNoComments}}
     <div class="new">
-        <h1>New</h1>
-        <textarea placeholder="Wrap code in <pre> tags to be formatted"></textarea>
-        <div class="submit">Post</div>
+        
+        <textarea placeholder="Write a new comment (wrap code in <pre> tags)..."></textarea>
+        <a class="submit">Post new comment</a>
     </div>
 </script>
 
@@ -109,12 +112,17 @@
 
 <script id="tpl-main-header" type="text/template">
     <div class="logo">Review My Code</div>
+    {{#showBackButton}}
+        <div class="left">
+            <a href="{{backButtonUrl}}" class="back-button">< Back</a>
+        </div>
+    {{/showBackButton}}
     <div class="right">
         {{#loggedIn}}
-            <a href="{{profileUrl}}" class="username">{{username}}</a>
+            <a href="{{profileUrl}}" class="username">Hello, {{username}}.</a>
         {{/loggedIn}}
         {{^loggedIn}}
-            <div class="login">Login</div>
+            <a class="login">Login</a>
         {{/loggedIn}}
     </div>
 </script>
@@ -123,11 +131,12 @@
     <h1>New Reivew</h1>
     <input type="text" name="filename" placeholder="Filename" />
     <select name="type">
+        <option disabled selected>Choose Language</option>
         <option value="1">Ruby</option>
         <option value="2">Javascript</option>
     </select>
     <textarea placeholder="Code..."></textarea>
-    <div class="submit">Post!</div>
+    <a class="submit">Post!</a>
 </script>
 
 </body>

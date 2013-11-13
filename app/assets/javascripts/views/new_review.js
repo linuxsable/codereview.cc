@@ -21,6 +21,10 @@ App.Views.NewReview = Backbone.View.extend({
             return alert('Must be logged in to post');
         }
 
+        if (!this.$('textarea').val().length) {
+            return alert('Please submit code');
+        }
+
         var Review = Parse.Object.extend('Review');
         var review = new Review();
 

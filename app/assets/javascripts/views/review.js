@@ -3,9 +3,7 @@ App.Views.Review = Backbone.View.extend({
     className: 'review',
 
     events: {
-        'mouseover .code .content pre ol li': 'mouseoverLine',
-        'mouseleave .code .content pre ol li': 'mouseleaveLine',
-        'click .code .content pre ol li': 'clickLine',
+
     },
 
     comments: [],
@@ -34,20 +32,5 @@ App.Views.Review = Backbone.View.extend({
         this.$el.append(this.subViews.reviewHeader.render().el);
         this.$el.append(this.subViews.reviewCode.render().el);
         this.$el.append(this.subViews.reviewComments.render().el);
-    },
-
-    mouseoverLine: function(e) {
-        var $el = $(e.currentTarget);
-        $el.find('span').css('background', '#eee');
-    },
-
-    mouseleaveLine: function(e) {
-        var $el = $(e.currentTarget);
-        $el.find('span').css('background', '#fff');
-    },
-
-    clickLine: function(e) {
-        var $el = $(e.currentTarget);
-        $el.append('<div class="comment">test</div>');
     }
 });

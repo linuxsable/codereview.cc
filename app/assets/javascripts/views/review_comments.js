@@ -25,7 +25,9 @@ App.Views.ReviewComments = Backbone.View.extend({
                     out += view.render().el.outerHTML;
                 });
                 return out;
-            }.bind(this)
+            }.bind(this),
+
+            showNoComments: !this.comments.length
         }));
 
         return this;
@@ -34,6 +36,10 @@ App.Views.ReviewComments = Backbone.View.extend({
     submitNewComment: function() {
         if (!Parse.User.current()) {
             return alert('Must be logged in to post');
+        }
+
+        if (!this.$('textarea').val().length) {
+            return alert('Please write something');
         }
 
         var Comment = Parse.Object.extend('Comment');

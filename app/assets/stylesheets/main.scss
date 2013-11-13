@@ -19,6 +19,15 @@ html, body {
   clear: both;
 }
 
+a {
+  color: #09C;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 header.main {
   width: 100%;
   top: 0;
@@ -36,14 +45,21 @@ header.main {
     @include no-user-select;
   }
 
-  .right {
-    position: absolute;
-    right: 0;
+  .left, .right {
     top: 0;
     font-size: 12px;
     padding: 19px 10px;
+    position: absolute;
+  }
 
-    .login, .username {
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+
+    .username {
       color: #444;
       text-decoration: underline;
       cursor: pointer;
@@ -51,6 +67,8 @@ header.main {
 
     .username {
       text-decoration: none;
+      position: relative;
+      z-index: 2;
     }
   }
 }
@@ -72,6 +90,10 @@ footer.main {
   top: 51px;
 }
 
+.home {
+  margin: 15px;
+}
+
 .new-review {
   margin: 15px;
 
@@ -90,10 +112,7 @@ footer.main {
 
   .submit {
     font-size: 14px;
-    font-weight: 800;
-    text-decoration: underline;
     margin-top: 10px;
-    cursor: pointer;
   }
 }
 
@@ -144,7 +163,8 @@ footer.main {
 
   .code {
     width: 50%;
-    margin: 20px 70px;
+    margin: 35px 70px;
+    border-bottom: 1px dashed #eee;
 
     .content {
       header {
@@ -191,54 +211,16 @@ footer.main {
     margin-left: 50px;
     padding-bottom: 50px;
 
-    .list {
-      .comment {
-        padding: 15px;
-        background: #f7f7f7;
-        font-size: 12px;
-        margin-top: 10px;
-        @include border-radius(5px);
-
-        .avatar {
-          width: 30px;
-          height: 30px;
-          overflow: hidden;
-          float: left;
-          @include border-radius(100px);
-
-          img {
-            max-width: 30px;
-            max-height: 30px;
-          }
-        }
-
-        .content {
-          float: left;
-          padding-left: 10px;
-          padding-top: 0;
-          color: #555;
-
-          .username {
-            padding-bottom: 8px;
-            font-style: italic;
-          }
-
-          pre {
-            font-size: 11px;
-            margin: 8px 0;
-            border: 1px solid #eee;
-            @include border-radius(2px);
-          }
-        }
-
-        .delete {
-          display: none;
-        }
-      }
+    .no-comments {
+      font-size: 12px;
+      color: #aaa;
+      font-style: italic;
+      margin-top: 8px;
     }
 
     .new {
-      margin-top: 30px;
+      margin-top: 15px;
+      border-top: 1px dashed #eee;
 
       h1 {
         font-size: 14px;
@@ -256,11 +238,52 @@ footer.main {
 
       .submit {
         font-size: 12px;
-        font-weight: 800;
         margin-top: 5px;
-        cursor: pointer;
-        text-decoration: underline;
       }
+    }
+  }
+
+  .comment {
+    padding: 15px;
+    background: #f7f7f7;
+    font-size: 12px;
+    margin-top: 10px;
+    @include border-radius(5px);
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      float: left;
+      @include border-radius(100px);
+
+      img {
+        max-width: 30px;
+        max-height: 30px;
+      }
+    }
+
+    .content {
+      float: left;
+      padding-left: 10px;
+      padding-top: 0;
+      color: #555;
+
+      .username {
+        padding-bottom: 8px;
+        font-style: italic;
+      }
+
+      pre {
+        font-size: 11px;
+        margin: 8px 0;
+        border: 1px solid #eee;
+        @include border-radius(2px);
+      }
+    }
+
+    .delete {
+      display: none;
     }
   }
 }
