@@ -74,15 +74,12 @@ header.main {
 }
 
 footer.main {
-  width: 100%;
-  padding: 15px;
-  border-top: 1px solid #ddd;
-  margin-top: 50px;
-  font-size: 10px;
-
-  .created-by {
-      color: #999;
-  }
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 11px;
+  padding: 12px;
+  color: #777;
 }
 
 .main-content {
