@@ -194,7 +194,7 @@ footer.main {
     .list {
       .comment {
         padding: 15px;
-        background: #f4f4f4;
+        background: #f7f7f7;
         font-size: 12px;
         margin-top: 10px;
         @include border-radius(5px);
@@ -219,9 +219,20 @@ footer.main {
           color: #555;
 
           .username {
-            padding-bottom: 5px;
+            padding-bottom: 8px;
             font-style: italic;
           }
+
+          pre {
+            font-size: 11px;
+            margin: 8px 0;
+            border: 1px solid #eee;
+            @include border-radius(2px);
+          }
+        }
+
+        .delete {
+          display: none;
         }
       }
     }
