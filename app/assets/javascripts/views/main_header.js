@@ -59,8 +59,7 @@ App.Views.MainHeader = Backbone.View.extend({
                             },
 
                             error: function() {
-                                console.log(arguments);
-                                // alert('Something went wrong!');
+                                alert('Something went wrong!');
                             }
                         });
                     });
@@ -70,8 +69,7 @@ App.Views.MainHeader = Backbone.View.extend({
             },
 
             error: function(user, error) {
-                console.log(arguments);
-                // alert('Something went wrong!');
+                alert('Something went wrong!');
             }
         });
     }
