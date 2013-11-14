@@ -22,7 +22,7 @@ App.Views.NewReview = Backbone.View.extend({
         }
 
         if (!this.$('textarea').val().length) {
-            return alert('Please submit code');
+            return alert('You must submit code.');
         }
 
         var Review = Parse.Object.extend('Review');
@@ -32,6 +32,11 @@ App.Views.NewReview = Backbone.View.extend({
         review.set('type', parseInt(this.$('select').find(":selected").val()));
         review.set('code', this.$('textarea').val());
         review.set('parent', Parse.User.current());
+
+        // Make it only readable to other users
+        var acl = new Parse.ACL(Parse.User.current());
+        acl.setPublicReadAccess(true);
+        review.setACL(acl);
 
         review.save({
             success: function() {

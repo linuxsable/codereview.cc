@@ -15,6 +15,10 @@ html, body {
   font-weight: 400;
 }
 
+strong {
+  font-weight: 600;
+}
+
 .clearer {
   clear: both;
 }
@@ -93,24 +97,40 @@ footer.main {
 }
 
 .new-review {
-  margin: 15px;
+  width: 960px;
+  margin: 15px auto 0 auto;
 
   textarea, input, select {
     display: block;
     border: 1px solid #eee;
     resize: none;
-    width: 500px;
     padding: 5px;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 200px;
+    margin: 0;
     margin-top: 10px;
   }
 
   textarea {
     min-height: 300px;
+    width: 100%;
+    font-family: Inconsolata;
+    font-size: 14px;
+  }
+
+  .info {
+    font-size: 12px;
+    margin: 8px 0;
+    color: #666;
   }
 
   .submit {
     font-size: 14px;
     margin-top: 10px;
+    cursor: pointer;
   }
 }
 
@@ -205,7 +225,7 @@ footer.main {
   }
 
   .comments {
-    width: 500px;
+    width: 600px;
     margin-left: 50px;
     padding-bottom: 50px;
 
@@ -237,6 +257,7 @@ footer.main {
       .submit {
         font-size: 12px;
         margin-top: 5px;
+        cursor: pointer;
       }
     }
   }
@@ -247,6 +268,7 @@ footer.main {
     font-size: 12px;
     margin-top: 10px;
     @include border-radius(5px);
+    overflow: scroll;
 
     .avatar {
       width: 30px;
@@ -261,21 +283,25 @@ footer.main {
       }
     }
 
+    .username {
+      padding-bottom: 8px;
+      font-style: italic;
+      padding-left: 38px;
+    }
+
     .content {
       float: left;
       padding-left: 10px;
       padding-top: 0;
       color: #555;
 
-      .username {
-        padding-bottom: 8px;
-        font-style: italic;
-      }
-
       pre {
         font-size: 11px;
         margin: 8px 0;
+        margin-right: 10px;
         border: 1px solid #eee;
+        max-width: 520px;
+        overflow: scroll;
         @include border-radius(2px);
       }
     }

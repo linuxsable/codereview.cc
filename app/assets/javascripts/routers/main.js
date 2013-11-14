@@ -1,6 +1,6 @@
 App.Routers.Main = Backbone.Router.extend({
     routes: {
-        '': 'index',
+        '': 'newReview',
         'r/:id': 'review',
         'review/new': 'newReview'
     },

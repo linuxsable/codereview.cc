@@ -21,7 +21,7 @@ App.Views.ReviewComment = Backbone.View.extend({
                 // If they are using the code thing,
                 // let's place it with our pretty print one
                 if (codeRegex.test(content)) {
-                    var tag = '<pre class="prettyprint linenums">';
+                    var tag = '<pre class="prettyprint">';
                     var content = content.replace(codeRegex, tag);
                     runPrettyPrint = true;
                 }
