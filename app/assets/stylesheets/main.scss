@@ -65,11 +65,7 @@ header.main {
 
     .username {
       color: #444;
-      text-decoration: underline;
       cursor: pointer;
-    }
-
-    .username {
       text-decoration: none;
       position: relative;
       z-index: 2;
@@ -181,7 +177,7 @@ footer.main {
 
   .code {
     width: 50%;
-    margin: 35px 70px;
+    margin: 18px 70px;
     border-bottom: 1px dashed #eee;
 
     .content {
