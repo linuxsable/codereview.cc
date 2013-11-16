@@ -280,8 +280,8 @@ footer.main {
     }
 
     .username {
+      font-size: 13px;
       padding-bottom: 8px;
-      font-style: italic;
       padding-left: 38px;
     }
 
@@ -290,6 +290,14 @@ footer.main {
       padding-left: 10px;
       padding-top: 0;
       color: #555;
+
+      .timestamp {
+        display: block;
+        color: #777;
+        margin-top: 10px;
+        font-style: italic;
+        font-size: 10px;
+      }
 
       pre {
         font-size: 11px;

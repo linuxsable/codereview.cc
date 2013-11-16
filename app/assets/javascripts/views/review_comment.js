@@ -3,7 +3,7 @@ App.Views.ReviewComment = Backbone.View.extend({
     className: 'comment',
 
     events: {
-        'click': 'a'
+        'mouseenter': 'a'
     },
 
     initialize: function(options) {
@@ -36,7 +36,11 @@ App.Views.ReviewComment = Backbone.View.extend({
 
             username: function() {
                 var user = this.model.get('user');
-                return user.get('fbFirstName') + ' ' + user.get('fbLastName');
+                return user.get('fbFirstName') + ' ' + user.get('fbLastName') + ' ';
+            }.bind(this),
+
+            timestamp: function() {
+                return moment(this.model.createdAt).fromNow();
             }.bind(this)
         }));
 
@@ -59,11 +63,7 @@ App.Views.ReviewComment = Backbone.View.extend({
         }
     },
 
-    mouseleave: function() {
-        this.$('.delete').hide();
-    },
-
     a: function() {
-        console.log('bacon');
+        console.log('hi');
     }
 });

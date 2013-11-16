@@ -14,17 +14,15 @@ App.Views.ReviewHeader = Backbone.View.extend({
         this.$el.html(Mustache.render(this.template, {
             name: function() {
                 var user = this.model.get('parent');
-                if (!user._hasData) return;
                 return user.get('fbFirstName') + ' ' + user.get('fbLastName');
             }.bind(this),
 
             timestamp: function() {
-                return this.model.createdAt;
+                return moment(this.model.createdAt).format('MMM Do, YYYY');
             }.bind(this),
 
             avatarUrl: function() {
                 var user = this.model.get('parent');
-                if (!user._hasData) return;
                 return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';
             }.bind(this)
         }));

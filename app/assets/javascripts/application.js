@@ -14,7 +14,9 @@
 //= require underscore
 //= require mustache
 //= require backbone
+//= require moment
 //= require app.js
+//= require helpers.js
 //= require routers/main.js
 //= require views/main_header.js
 //= require views/new_review.js
