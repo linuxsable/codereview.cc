@@ -3,7 +3,9 @@ App.Views.ReviewComment = Backbone.View.extend({
     className: 'comment',
 
     events: {
-        'mouseenter': 'a'
+        'mouseenter': 'mouseenter',
+        'mouseleave': 'mouseleave',
+        'click .delete': 'deleteClicked'
     },
 
     initialize: function(options) {
@@ -54,7 +56,8 @@ App.Views.ReviewComment = Backbone.View.extend({
     },
 
     mouseenter: function() {
-        console.log('hi');
+        if (!Parse.User.current()) return;
+
         var user = this.model.get('user');
         if (user) {
             if (user.id == Parse.User.current().id) {
@@ -63,7 +66,21 @@ App.Views.ReviewComment = Backbone.View.extend({
         }
     },
 
-    a: function() {
-        console.log('hi');
+    mouseleave: function() {
+        this.$('.delete').hide();
+    },
+
+    deleteClicked: function() {
+        this.model.destroy({
+            success: function() {
+
+            },
+
+            error: function() {
+
+            }
+        });
+
+        this.$el.remove();
     }
 });

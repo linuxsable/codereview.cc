@@ -265,6 +265,7 @@ footer.main {
     margin-top: 10px;
     @include border-radius(5px);
     overflow: scroll;
+    position: relative;
 
     .avatar {
       width: 30px;
@@ -312,6 +313,20 @@ footer.main {
 
     .delete {
       display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #777;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 3px;
+      @include border-radius(3px);
+      @include no-user-select;
+
+      &:hover {
+        background: #aaa;
+        color: #fff;
+      }
     }
   }
 }

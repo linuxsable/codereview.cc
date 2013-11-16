@@ -9,28 +9,32 @@ App.Views.ReviewComments = Backbone.View.extend({
     initialize: function(options) {
         this.template = $('#tpl-review-comments').html();
         this.comments = options.comments || [];
+
+        this.setupElements();
     },
 
     render: function() {
         var commentViews = [];
 
         this.$el.html(Mustache.render(this.template, {
-            comments: function() {
-                var out = '';
-                _.each(this.comments, function(comment) {
-                    var view = new App.Views.ReviewComment({
-                        model: comment
-                    });
-                    commentViews.push(view);
-                    out += view.render().el.outerHTML;
-                });
-                return out;
-            }.bind(this),
-
             showNoComments: !this.comments.length
         }));
 
+        this.setupElements();
+
+        // Append the comments
+        _.each(this.comments, function(comment) {
+            var view = new App.Views.ReviewComment({
+                model: comment
+            });
+            this.$list.append(view.render().el);
+        }.bind(this));
+
         return this;
+    },
+
+    setupElements: function() {
+        this.$list = this.$('.list');
     },
 
     submitNewComment: function() {
