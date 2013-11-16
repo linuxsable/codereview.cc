@@ -268,29 +268,31 @@ footer.main {
     position: relative;
 
     .avatar {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       overflow: hidden;
       float: left;
       @include border-radius(100px);
 
       img {
-        max-width: 30px;
-        max-height: 30px;
+        max-width: 34px;
+        max-height: 34px;
       }
     }
 
     .username {
-      font-size: 13px;
-      padding-bottom: 8px;
-      padding-left: 38px;
+      float: left;
+      font-size: 14px;
+      margin: 10px 0 0 8px;
     }
 
     .content {
       float: left;
-      padding-left: 10px;
-      padding-top: 0;
-      color: #555;
+      padding-top: 12px;
+      color: #444;
+      line-height: 1.4em;
+      font-size: 13px;
+      clear: both;
 
       .timestamp {
         display: block;
@@ -301,7 +303,7 @@ footer.main {
       }
 
       pre {
-        font-size: 11px;
+        font-size: 12px;
         margin: 8px 0;
         margin-right: 10px;
         border: 1px solid #eee;
