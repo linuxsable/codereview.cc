@@ -37,6 +37,12 @@ App.Views.Review = Backbone.View.extend({
     },
 
     setPageTitle: function() {
-        document.title = App.pageTitleBase + ' - ' + this.model.get('filename');
+        var filename;
+        if (this.model.get('filename').length) {
+            filename = this.model.get('filename');
+        } else {
+            filename = 'Untitled';
+        }
+        document.title = App.pageTitleBase + ' - ' + filename;
     }
 });
