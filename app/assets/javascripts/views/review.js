@@ -25,6 +25,8 @@ App.Views.Review = Backbone.View.extend({
             comments: this.comments
         });
 
+        this.setPageTitle();
+
         this.render();
     },
 
@@ -32,5 +34,9 @@ App.Views.Review = Backbone.View.extend({
         this.$el.append(this.subViews.reviewHeader.render().el);
         this.$el.append(this.subViews.reviewCode.render().el);
         this.$el.append(this.subViews.reviewComments.render().el);
+    },
+
+    setPageTitle: function() {
+        document.title = App.pageTitleBase + ' - ' + this.model.get('filename');
     }
 });

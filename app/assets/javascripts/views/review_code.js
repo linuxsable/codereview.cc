@@ -15,7 +15,7 @@ App.Views.ReviewCode = Backbone.View.extend({
     render: function() {
         var model = this.model;
 
-        this.$el.html(Mustache.render(this.template, _.extend(this.model.attributes, {
+        this.$el.html(Mustache.render(this.template, _.extend(this.model.toJSON(), {
             typeName: function() {
                 if (model.get('type') == 1) {
                     return 'Ruby';
@@ -32,10 +32,12 @@ App.Views.ReviewCode = Backbone.View.extend({
             },
 
             filename: function() {
-                if (!this.model.get('filename').length) {
+                if (model.get('filename').length) {
+                    return model.get('filename');
+                } else {
                     return 'Untitled';
                 }
-            }.bind(this)
+            }
         })));
 
         _.defer(function() {
