@@ -14,7 +14,11 @@ App.Views.ReviewHeader = Backbone.View.extend({
         this.$el.html(Mustache.render(this.template, {
             name: function() {
                 var user = this.model.get('parent');
-                return user.get('fbFirstName') + ' ' + user.get('fbLastName');
+                if (user) {
+                    return user.get('fbFirstName') + ' ' + user.get('fbLastName');    
+                } else {
+                    return 'Anonymous';
+                }
             }.bind(this),
 
             timestamp: function() {
@@ -23,7 +27,11 @@ App.Views.ReviewHeader = Backbone.View.extend({
 
             avatarUrl: function() {
                 var user = this.model.get('parent');
-                return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';
+                if (user) {
+                    return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';    
+                } else {
+                    return null;
+                }
             }.bind(this)
         }));
 

@@ -27,7 +27,7 @@ App.Views.ReviewCode = Backbone.View.extend({
                     return 'Other';
                 }
                 else {
-                    return 'Unknown Lang';
+                    return 'Unknown';
                 }
             },
 

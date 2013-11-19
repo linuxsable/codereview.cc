@@ -64,12 +64,14 @@
 </script>
 
 <script id="tpl-review-header" type="text/template">
-    <div class="avatar">
-          <img src="{{avatarUrl}}" />
+      <div class="avatar">
+          {{#avatarUrl}}
+              <img src="{{avatarUrl}}" />
+          {{/avatarUrl}}
       </div>
       <div class="username">{{name}}</div>
       <div class="meta">
-          <div class="time">{{timestamp}}</div>
+          <div class="time">Created {{timestamp}}</div>
       </div>
       <div class="clearer"></div>
 </script>

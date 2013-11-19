@@ -17,10 +17,6 @@ App.Views.NewReview = Backbone.View.extend({
     },
 
     submit: function() {
-        if (!Parse.User.current()) {
-            return alert('Must be logged in to post');
-        }
-
         if (!this.$('textarea').val().length) {
             return alert('You must submit code.');
         }
@@ -31,7 +27,10 @@ App.Views.NewReview = Backbone.View.extend({
         review.set('filename', this.$('input[name="filename"]').val());
         review.set('type', parseInt(this.$('select').find(":selected").val()));
         review.set('code', this.$('textarea').val());
-        review.set('parent', Parse.User.current());
+
+        if (Parse.User.current()) {
+            review.set('parent', Parse.User.current());
+        }
 
         // Make it only readable to other users
         var acl = new Parse.ACL(Parse.User.current());
