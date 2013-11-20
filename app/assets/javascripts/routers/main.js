@@ -43,7 +43,8 @@ App.Routers.Main = Backbone.Router.extend({
             },
 
             error: function() {
-                console.log(arguments);
+                // Review not found
+                window.location = '/';
             }
         });
     },

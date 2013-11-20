@@ -3,13 +3,18 @@ App.Views.ReviewCode = Backbone.View.extend({
     className: 'code',
 
     events: {
+        'mouseover': 'mouseover',
+        'mouseleave': 'mouseleave',
         // 'mouseover .content pre ol li': 'mouseoverLine',
         // 'mouseleave .content pre ol li': 'mouseleaveLine',
         // 'click .content pre ol li': 'clickLine'
+        'click .content header .admin .delete': 'editClicked',
+        'click .content header .admin .delete': 'deleteClicked',
     },
 
     initialize: function() {
         this.template = $('#tpl-review-code').html();
+        this.setupElements();
     },
 
     render: function() {
@@ -43,8 +48,14 @@ App.Views.ReviewCode = Backbone.View.extend({
         _.defer(function() {
             prettyPrint();
         });
+
+        this.setupElements();
         
         return this;
+    },
+
+    setupElements: function() {
+        this.$admin = this.$('.admin');
     },
 
     mouseoverLine: function(e) {
@@ -65,5 +76,36 @@ App.Views.ReviewCode = Backbone.View.extend({
         });
 
         $el.append(comment.render().el);
+    },
+
+    mouseover: function() {
+        var user = Parse.User.current();
+        if (user && user.id == this.model.get('parent').id) {
+            this.$admin.show();    
+        }
+    },
+
+    mouseleave: function() {
+        this.$admin.hide();
+    },
+
+    editClicked: function() {
+
+    },
+
+    deleteClicked: function() {
+        var msg = 'Are you sure you want to delete this review?';
+
+        if (confirm(msg)) {
+            this.model.destroy({
+                success: function() {
+                    window.location = '/';
+                },
+
+                error: function() {
+                    alert('Failed to delete review.');
+                }
+            });
+        }
     }
 });

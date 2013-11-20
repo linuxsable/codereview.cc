@@ -81,6 +81,10 @@
     <div class="content">
           <header>
               <div class="filename">{{filename}} <span class="type">({{typeName}})</span></div>
+              <div class="admin">
+                  <a class="edit">Edit</a>
+                  <a class="delete">Delete</a>
+              </div>
           </header>
           <pre class="prettyprint linenums">{{code}}</pre>
       </div>
@@ -112,7 +116,7 @@
 </script>
 
 <script id="tpl-main-header" type="text/template">
-    <div class="logo">Code Review</div>
+    <a href="/" class="logo">Code Review</a>
     {{#showBackButton}}
         <div class="left">
             <a href="{{backButtonUrl}}" class="back-button">< Back</a>
@@ -141,7 +145,7 @@
     <div class="info">
         Notice: All submited reviews are <strong>public</strong>. Anyone with the unique URL will be able to view your code.
     </div>
-    <a class="submit">Post!</a>
+    <a class="submit">Post</a>
 </script>
 
 <script>

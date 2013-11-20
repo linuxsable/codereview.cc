@@ -6,6 +6,8 @@ App.Views.ReviewComments = Backbone.View.extend({
         'click .submit': 'submitNewComment'
     },
 
+    sendingComment: false,
+
     initialize: function(options) {
         this.template = $('#tpl-review-comments').html();
         this.comments = options.comments || [];
@@ -46,6 +48,12 @@ App.Views.ReviewComments = Backbone.View.extend({
             return alert('Please write something');
         }
 
+        if (this.sendingComment) {
+            console.log('returning');
+            return;
+        }
+        this.sendingComment = true;
+
         var Comment = Parse.Object.extend('Comment');
         var comment = new Comment();
 
@@ -67,12 +75,13 @@ App.Views.ReviewComments = Backbone.View.extend({
                     success: function(_comments) {
                         this.comments = _comments;
                         this.render();
+                        this.sendingComment = false;
                     }.bind(this)
                 });
             }.bind(this),
 
             error: function() {
-
+                this.sendingComment = false;
             }
         });
     }

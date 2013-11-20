@@ -26,6 +26,7 @@ strong {
 a {
   color: #09C;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -41,12 +42,17 @@ header.main {
   background: rgba(255, 255, 255, 0.94);
   z-index: 1;
 
-  .logo {
+  a.logo {
     font-weight: 400;
     font-size: 20px;
     color: #333;
     text-align: center;
+    display: block;
     @include no-user-select;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .left, .right {
@@ -177,7 +183,7 @@ footer.main {
 
   .code {
     width: 50%;
-    margin: 18px 70px;
+    margin: 18px 50px;
     border-bottom: 1px dashed #eee;
 
     .content {
@@ -185,9 +191,29 @@ footer.main {
         .filename {
           font-size: 14px;
           color: #555;
+          float: left;
 
           .type {
             color: #999;
+          }
+        }
+
+        .admin {
+          float: left;
+          font-size: 12px;
+          color: #666;
+          padding-left: 10px;
+          padding-top: 2px;
+          display: none;
+
+          .edit {
+            float: left;
+            display: none;
+          }
+
+          .delete {
+            float: left;
+            // padding-left: 5px
           }
         }
       }
@@ -222,7 +248,7 @@ footer.main {
 
   .comments {
     width: 600px;
-    margin-left: 50px;
+    margin-left: 40px;
     padding-bottom: 50px;
 
     .no-comments {
