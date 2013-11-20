@@ -268,27 +268,32 @@ footer.main {
     position: relative;
 
     .avatar {
-      width: 34px;
-      height: 34px;
+      width: 30px;
+      height: 30px;
       overflow: hidden;
       float: left;
       @include border-radius(100px);
+      @include transition(500ms linear);
+
+      &:hover {
+        @include box-shadow(0px 0px 12px #09C);
+      }
 
       img {
-        max-width: 34px;
-        max-height: 34px;
+        max-width: 30px;
+        max-height: 30px;
       }
     }
 
     .username {
       float: left;
       font-size: 14px;
-      margin: 10px 0 0 8px;
+      margin: 8px 0 0 8px;
     }
 
     .content {
       float: left;
-      padding-top: 12px;
+      padding-top: 10px;
       color: #444;
       line-height: 1.4em;
       font-size: 13px;

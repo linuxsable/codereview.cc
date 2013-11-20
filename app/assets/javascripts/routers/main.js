@@ -29,6 +29,7 @@ App.Routers.Main = Backbone.Router.extend({
                 commentQuery.equalTo('review', review);
                 commentQuery.include('user');
                 commentQuery.ascending('createdAt');
+                commentQuery.limit(1000);
 
                 commentQuery.find({
                     success: function(result) {
