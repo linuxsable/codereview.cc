@@ -32,7 +32,7 @@ App.Views.ReviewCode = Backbone.View.extend({
                     return 'Other';
                 }
                 else {
-                    return 'Unknown';
+                    return null;
                 }
             },
 

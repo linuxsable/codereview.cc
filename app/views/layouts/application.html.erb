@@ -80,7 +80,12 @@
 <script id="tpl-review-code" type="text/template">
     <div class="content">
           <header>
-              <div class="filename">{{filename}} <span class="type">({{typeName}})</span></div>
+              <div class="filename">
+                  {{filename}}
+                  {{#typeName}}
+                      <span class="type">({{typeName}})</span>
+                  {{/typeName}}
+              </div>
               <div class="admin">
                   <a class="edit">Edit</a>
                   <a class="delete">Delete</a>

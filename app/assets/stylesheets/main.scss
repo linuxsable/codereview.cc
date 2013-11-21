@@ -223,15 +223,15 @@ footer.main {
         padding: 0;
         font-family: Inconsolata;
         padding: 20px;
-        font-size: 14px;
-        line-height: 1.1em;
+        font-size: 15px;
+        line-height: 1.2em;
         cursor: default;
         clear: both;
 
         ol li {
           list-style: decimal;
           background: #fff;
-          color: #777;
+          color: #888;
 
           span {
             @include transition(all 50ms linear);  
