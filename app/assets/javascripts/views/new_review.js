@@ -28,6 +28,11 @@ App.Views.NewReview = Backbone.View.extend({
         review.set('type', parseInt(this.$('select').find(":selected").val()));
         review.set('code', this.$('textarea').val());
 
+        var matchedLines = this.$('textarea').val().match(/\n/g);
+        if (matchedLines) {
+            review.set('lineCount', parseInt(matchedLines.length + 1));
+        }
+
         if (Parse.User.current()) {
             review.set('parent', Parse.User.current());
         }
