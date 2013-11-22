@@ -37,7 +37,7 @@ App.Views.ReviewCode = Backbone.View.extend({
             },
 
             filename: function() {
-                if (model.get('filename').length) {
+                if (model.get('filename') && model.get('filename').length) {
                     return model.get('filename');
                 } else {
                     return 'Untitled';
