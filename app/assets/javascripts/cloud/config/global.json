@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Review My Code": {
+            "applicationId": "Gm97bunEwR2nDQWO0SULDGNwxtPLZsorqYrR7UjR", 
+            "masterKey": "bHMWiRP6IZD8L4ozCx4XNNRSq7FnGiUus8A9qoX0"
+        }, 
+        "_default": {
+            "link": "Review My Code"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.13"
+    }
+}
