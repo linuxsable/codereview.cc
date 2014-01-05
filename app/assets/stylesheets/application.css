@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require reset.css
+ *= require codemirror.css
+ *= require solarized.css
  *= require_tree .
  */
