@@ -13,11 +13,22 @@ App.Views.NewReview = Backbone.View.extend({
     render: function() {
         this.$el.html(Mustache.render(this.template, {}));
 
+        _.defer(function() {
+            this.editor = CodeMirror.fromTextArea(this.$('textarea').get(0), {
+                indentUnit: 2,
+                lineNumbers: true,
+                firstLineNumber: 1,
+                theme: 'solarized',
+                autofocus: true,
+                viewportMargin: 800
+            });
+        }.bind(this));
+
         return this;
     },
 
     submit: function() {
-        if (!this.$('textarea').val().length) {
+        if (!this.editor.getValue().length) {
             return alert('You must submit code.');
         }
 
@@ -26,7 +37,7 @@ App.Views.NewReview = Backbone.View.extend({
 
         review.set('filename', this.$('input[name="filename"]').val());
         review.set('type', parseInt(this.$('select').find(":selected").val()));
-        review.set('code', this.$('textarea').val());
+        review.set('code', this.editor.getValue());
 
         var matchedLines = this.$('textarea').val().match(/\n/g);
         if (matchedLines) {

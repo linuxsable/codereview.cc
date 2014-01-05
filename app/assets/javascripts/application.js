@@ -15,6 +15,8 @@
 //= require mustache
 //= require backbone
 //= require moment
+//= require codemirror
+//= require mode/javascript/javascript.js
 //= require app.js
 //= require helpers.js
 //= require routers/main.js

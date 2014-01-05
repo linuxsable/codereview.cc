@@ -45,9 +45,20 @@ App.Views.ReviewCode = Backbone.View.extend({
             }
         })));
 
+        // _.defer(function() {
+        //     prettyPrint();
+        // });
+
         _.defer(function() {
-            prettyPrint();
-        });
+            this.editor = CodeMirror.fromTextArea(this.$('textarea').get(0), {
+                indentUnit: 2,
+                lineNumbers: true,
+                firstLineNumber: 1,
+                theme: 'solarized',
+                readOnly: true,
+                viewportMargin: Infinity
+            });
+        }.bind(this));
 
         this.setupElements();
         

@@ -33,6 +33,14 @@ a {
   }
 }
 
+.blue-btn {
+  padding: 10px 12px;
+  border: 1px solid #09c;
+  background: #fff;
+  display: inline-block;
+  @include border-radius(2px);
+}
+
 header.main {
   width: 100%;
   top: 0;
@@ -40,7 +48,7 @@ header.main {
   border-bottom: 1px solid #eee;
   position: fixed;
   background: rgba(255, 255, 255, 0.94);
-  z-index: 1;
+  z-index: 100;
 
   a.logo {
     font-weight: 400;
@@ -116,11 +124,9 @@ footer.main {
     margin-top: 10px;
   }
 
-  textarea {
-    min-height: 300px;
-    width: 100%;
-    font-family: Inconsolata;
-    font-size: 14px;
+  .CodeMirror {
+    margin-top: 10px;
+    height: 500px;
   }
 
   .info {
@@ -183,7 +189,7 @@ footer.main {
 
   .code {
     width: 50%;
-    margin: 18px 50px;
+    margin: 18px 50px 50px 50px;
     border-bottom: 1px dashed #eee;
 
     .content {
@@ -218,31 +224,8 @@ footer.main {
         }
       }
 
-      pre.prettyprint {
-        border: none;
-        padding: 0;
-        font-family: Inconsolata;
-        padding: 20px;
-        font-size: 15px;
-        line-height: 1.2em;
-        cursor: default;
-        clear: both;
-
-        ol li {
-          list-style: decimal;
-          background: #fff;
-          color: #888;
-
-          span {
-            @include transition(all 50ms linear);  
-          }
-
-          .comment {
-            width: 100%;
-            height: 50px;
-            border: 1px solid #eee;
-          }
-        }
+      .CodeMirror {
+        margin-top: 20px;
       }
     }
   }

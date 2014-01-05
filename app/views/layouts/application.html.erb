@@ -3,15 +3,18 @@
 <head>
   <title>Code Review</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag    "codemirror", media: "all" %>
+  <%= stylesheet_link_tag    "solarized", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script>
   <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://google-code-prettify.googlecode.com/svn/loader/prettify.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:100,400|Inconsolata|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="http://jmblog.github.io/color-themes-for-google-code-prettify/css/themes/tomorrow.css">
-  <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
 </head>
 <body>
 
@@ -90,8 +93,9 @@
                   <a class="edit">Edit</a>
                   <a class="delete">Delete</a>
               </div>
+              <div class="clearer"></div>
           </header>
-          <pre class="prettyprint linenums">{{code}}</pre>
+          <textarea>{{code}}</textarea>
       </div>
 </script>
 
@@ -103,7 +107,7 @@
     {{/showNoComments}}
     <div class="new">
         <textarea placeholder="Write a new comment (wrap code in <pre> tags)..."></textarea>
-        <a class="submit">Post Comment</a>
+        <a class="submit blue-btn">Post Comment</a>
     </div>
 </script>
 
@@ -150,7 +154,7 @@
     <div class="info">
         Notice: All submited reviews are <strong>public</strong>. Anyone with the unique URL will be able to view your code.
     </div>
-    <a class="submit">Post</a>
+    <a class="submit blue-btn">Submit Code</a>
 </script>
 
 <script>
