@@ -33,12 +33,20 @@ a {
   }
 }
 
-.blue-btn {
+a.blue-btn {
+  font-size: 12px;
   padding: 10px 12px;
   border: 1px solid #09c;
   background: #fff;
   display: inline-block;
   @include border-radius(2px);
+  @include transition(all, 75ms, linear);
+
+  &:hover {
+    text-decoration: none;
+    color: #038BB8;
+    border: 1px solid #038BB8;
+  }
 }
 
 header.main {
@@ -130,9 +138,11 @@ footer.main {
   }
 
   .info {
-    font-size: 12px;
+    font-family: helvetica;
+    font-size: 11px;
+    font-style: italic;
     margin: 8px 0;
-    color: #666;
+    color: #888;
   }
 
   .submit {
