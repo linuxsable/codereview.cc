@@ -3,7 +3,7 @@ App.Views.MainHeader = Backbone.View.extend({
     className: 'main',
 
     events: {
-        'click .login': 'login'
+        // 'click .login': 'login'
     },
 
     initialize: function() {
@@ -41,36 +41,6 @@ App.Views.MainHeader = Backbone.View.extend({
     },
 
     login: function() {
-        var _this = this;
-
-        Parse.FacebookUtils.logIn(null, {
-            success: function(user) {
-                if (!user.existed()) {
-                    FB.api('/me', function(resp) {
-                        var currentUser = Parse.User.current();
-                        currentUser.set('fbFirstName', resp.first_name);
-                        currentUser.set('fbLastName', resp.last_name);
-                        currentUser.set('fbUsername', resp.username);
-                        currentUser.set('fbBio', resp.bio);
-                        currentUser.set('fbId', parseInt(resp.id));
-                        currentUser.save(null, {
-                            success: function() {
-                                _this.render();
-                            },
-
-                            error: function() {
-                                alert('Something went wrong!');
-                            }
-                        });
-                    });
-                } else {
-                    _this.render();
-                }
-            },
-
-            error: function(user, error) {
-                alert('Something went wrong!');
-            }
-        });
+        App.helpers.logUserIn();
     }
 });

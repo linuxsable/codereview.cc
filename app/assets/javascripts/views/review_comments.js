@@ -41,7 +41,10 @@ App.Views.ReviewComments = Backbone.View.extend({
 
     submitNewComment: function() {
         if (!Parse.User.current()) {
-            return alert('Must be logged in to post');
+            App.helpers.logUserIn(function() {
+                location.reload();
+            });
+            return;
         }
 
         if (!this.$('textarea').val().length) {

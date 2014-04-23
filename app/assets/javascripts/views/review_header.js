@@ -13,12 +13,13 @@ App.Views.ReviewHeader = Backbone.View.extend({
     render: function() {
         this.$el.html(Mustache.render(this.template, {
             name: function() {
-                var user = this.model.get('parent');
-                if (user) {
-                    return user.get('fbFirstName') + ' ' + user.get('fbLastName');    
-                } else {
-                    return 'Anonymous';
-                }
+                // var user = this.model.get('parent');
+                // if (user) {
+                //     return user.get('fbFirstName') + ' ' + user.get('fbLastName');    
+                // } else {
+                //     return 'Anonymous';
+                // }
+                return 'Coder';
             }.bind(this),
 
             timestamp: function() {
@@ -26,12 +27,13 @@ App.Views.ReviewHeader = Backbone.View.extend({
             }.bind(this),
 
             avatarUrl: function() {
-                var user = this.model.get('parent');
-                if (user) {
-                    return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';    
-                } else {
-                    return null;
-                }
+                // var user = this.model.get('parent');
+                // if (user) {
+                //     return 'http://graph.facebook.com/' + user.get('fbId') + '/picture';    
+                // } else {
+                //     return null;
+                // }
+                return null;
             }.bind(this)
         }));
 

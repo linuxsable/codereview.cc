@@ -24,7 +24,7 @@
 
 <footer class="main">
     <div class="left">
-        <div class="created-by">This software is extermely Alpha. Created by <a href="http://twitter.com/_ty">@_ty</a></div>
+        <div class="created-by">This app is extermely alpha. Created by <a href="http://twitter.com/_ty">@_ty</a>.</div>
     </div>
 </footer>
 
@@ -131,13 +131,16 @@
             <a href="{{backButtonUrl}}" class="back-button">< Back</a>
         </div>
     {{/showBackButton}}
-    <div class="right">
+    <div class="right-old" style="display:none">
         {{#loggedIn}}
             <a class="username">Hello, {{username}}.</a>
         {{/loggedIn}}
         {{^loggedIn}}
             <a class="login">Login</a>
         {{/loggedIn}}
+    </div>
+    <div class="right">
+      Hello. <a href="#" class="app">Download the OSX App</a>
     </div>
 </script>
 
@@ -152,9 +155,9 @@
     </select>-->
     <textarea placeholder="Code"></textarea>
     <div class="info">
-        Notice: All submited reviews are <strong>public</strong>. Anyone with the unique URL will be able to view your code.
+        Notice: All submited reviews are public. Anyone with the unique URL will be able to view your code.
     </div>
-    <a class="submit blue-btn">Submit Code</a>
+    <a class="submit blue-btn">Submit Review</a>
 </script>
 
 <script>

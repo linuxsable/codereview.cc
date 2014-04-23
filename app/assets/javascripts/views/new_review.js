@@ -39,17 +39,17 @@ App.Views.NewReview = Backbone.View.extend({
         review.set('type', parseInt(this.$('select').find(":selected").val()));
         review.set('code', this.editor.getValue());
 
-        var matchedLines = this.$('textarea').val().match(/\n/g);
+        var matchedLines = this.editor.getValue().match(/\n/g);
         if (matchedLines) {
             review.set('lineCount', parseInt(matchedLines.length + 1));
         }
 
-        if (Parse.User.current()) {
-            review.set('parent', Parse.User.current());
-        }
+        // if (Parse.User.current()) {
+        //     review.set('parent', Parse.User.current());
+        // }
 
         // Make it only readable to other users
-        var acl = new Parse.ACL(Parse.User.current());
+        var acl = new Parse.ACL();
         acl.setPublicReadAccess(true);
         review.setACL(acl);
 

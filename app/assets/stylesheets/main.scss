@@ -7,6 +7,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 html, body {
@@ -49,6 +50,11 @@ a.blue-btn {
   }
 }
 
+.CodeMirror {
+  border: 1px solid #eee;
+  @include border-radius(3px);
+}
+
 header.main {
   width: 100%;
   top: 0;
@@ -85,6 +91,11 @@ header.main {
   .right {
     right: 0;
 
+    a.app {
+      text-decoration: underline;
+      color: #222;
+    }
+
     .username {
       color: #444;
       cursor: pointer;
@@ -99,8 +110,8 @@ footer.main {
   position: fixed;
   bottom: 0;
   right: 0;
-  font-size: 11px;
-  padding: 12px;
+  font-size: 9px;
+  padding: 8px;
   color: #777;
   background: #fff;
 }
@@ -135,6 +146,7 @@ footer.main {
   .CodeMirror {
     margin-top: 10px;
     height: 500px;
+    border: 1px solid #f1f1f1;
   }
 
   .info {
@@ -200,7 +212,7 @@ footer.main {
   .code {
     width: 50%;
     margin: 18px 0 50px 38px;
-    border-bottom: 1px dashed #eee;
+    // border-bottom: 1px dashed #eee;
 
     .content {
       header {
@@ -283,7 +295,7 @@ footer.main {
     background: #f7f7f7;
     font-size: 12px;
     margin-top: 10px;
-    @include border-radius(5px);
+    @include border-radius(3px);
     overflow: scroll;
     position: relative;
 
